@@ -1,8 +1,8 @@
-const express = require('express');
+const express = require("express");
 //const morgan = require('morgan');
 
-const userRouter = require('./routes/userRoutes');
-
+const userRouter = require("./routes/userRoutes");
+const productRouter = require("./routes/productRoutes");
 const app = express();
 
 // // 1) MIDDLEWARES
@@ -14,7 +14,7 @@ app.use(express.json());
 //app.use(express.static(`${__dirname}/public`));
 
 app.use((req, res, next) => {
-  console.log('Hello from the middleware 👋');
+  console.log("Hello from the middleware 👋");
   next();
 });
 
@@ -24,6 +24,9 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-app.use('/users', userRouter); //creating user
-
+app.use("/users", userRouter);
+// app.use("/fruits", productRouter);
+// app.use("/veggies", productRouter);
+// app.use("/specials", productRouter);
+app.use("/products", productRouter);
 module.exports = app;
