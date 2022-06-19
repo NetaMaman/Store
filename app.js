@@ -3,6 +3,7 @@ const express = require("express");
 
 const userRouter = require("./routes/userRoutes");
 const productRouter = require("./routes/productRoutes");
+// const apiRouter = require("./routes/API");
 const app = express();
 
 // // 1) MIDDLEWARES
@@ -29,4 +30,5 @@ app.use("/users", userRouter);
 // app.use("/veggies", productRouter);
 // app.use("/specials", productRouter);
 app.use("/products", productRouter);
+// app.use("/API", apiRouter);
 module.exports = app;

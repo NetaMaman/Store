@@ -18,6 +18,25 @@ exports.getAllProducts = async (req, res) => {
     });
   }
 };
+
+//get the collection of all specials
+exports.getAllSpecials = async (req, res) => {
+  try {
+    const specials = await Product.find({ productType: "special" }).exec();
+    res.status(200).json({
+      status: "sucsses",
+      results: specials.length,
+      data: {
+        specials,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: "fail",
+      message: err,
+    });
+  }
+};
 //get the collection of all fruits
 exports.getAllFruits = async (req, res) => {
   try {

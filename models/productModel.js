@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   productType: {
     type: String,
-    enum: ["fruit", "vegetable", "spcial"],
+    enum: ["fruit", "vegetable", "special"],
     required: [true, "A product must have type"],
   },
   name: {
