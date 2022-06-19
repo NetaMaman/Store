@@ -10,6 +10,10 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, "A product must have a name"],
   },
+  color: {
+    type: String,
+    required: [true, "A product must get color"],
+  },
   image: {
     type: String,
   },

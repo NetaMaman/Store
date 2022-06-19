@@ -4,7 +4,8 @@ const productController = require("./../controllers/productController");
 const router = express.Router();
 
 router.route("/").get(productController.getAllProducts);
-
+router.route("/fruits").get(productController.getAllFruits);
+router.route("/veggies").get(productController.getAllVeggies);
 router.route("/").post(productController.createProduct);
 
 router
