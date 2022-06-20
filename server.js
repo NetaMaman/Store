@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const app = require('./app');
+const application = require('./application');
 
 const DB =
   'mongodb+srv://Danielmishan:Danielush7598@cluster0.cwwwndg.mongodb.net/Store?retryWrites=true&w=majority';
@@ -14,6 +14,6 @@ mongoose
   .then(() => console.log('DB connection successful!'));
 
 const port = process.env.PORT || 3000;
-const server = app.listen(port, () => {
+const server = application.listen(port, () => {
   console.log(`App running on port ${port}...`);
 });
