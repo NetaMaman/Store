@@ -2,13 +2,12 @@ import classes from './Popup.module.css'
 
 
 function Popup(props){
-    // HandleClose={()=>}
 
     return(
         <div className={classes.popup_box}>
             <div className={classes.box}>
                 <button className={classes.btn_close} onClick={props.handleClose}>X</button>
-                {props.children};
+                {props.children}
 
             </div>
         </div>

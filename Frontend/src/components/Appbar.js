@@ -15,13 +15,13 @@ import { TbTallymark1 } from "react-icons/tb";
 import logo from './resources/logo.png'
 import Popup from './ui/Popup'
 import {useState} from "react";
-import SignIn from './SignIn';
+import SignIn from '../pages/SignInPage';
 
 
 function Appbar(){
   const [isOpen, setIsOpen]= useState(false);
 
-  function togglePopup(){
+  function togglePopupSignIn(){
     setIsOpen(!isOpen);
   };
 
@@ -64,7 +64,8 @@ function Appbar(){
           <TbTallymark1 className={classes.separator} />
 
           <div>
-          <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit" onClick={togglePopup}>sign in</Button>
+          <NavLink to='/users/sign-in'>
+          <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit" onClick={togglePopupSignIn}>sign in</Button>
           {/* {isOpen && <Popup
             handleClose={togglePopup}
             content= {
@@ -74,10 +75,11 @@ function Appbar(){
             }/>
           } */}
               {isOpen && <SignIn
-            handleClose={togglePopup}
+            handleClose={togglePopupSignIn}
             />
           }
-          </div>
+          </NavLink>
+          </div> 
           <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit">Sign up</Button>
 
           <IconButton color="inherit" aria-label="add to shopping cart">

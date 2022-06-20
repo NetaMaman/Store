@@ -1,4 +1,11 @@
 .form{
     color: black;
+}
+
+.popup{
     background-color: black;
+}
+
+.btn_sign{
+    background-color: aqua;
 }
