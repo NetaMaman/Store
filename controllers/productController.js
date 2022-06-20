@@ -100,7 +100,7 @@ exports.createProduct = async (req, res) => {
     res.status(201).json({
       status: "success",
       data: {
-        user: newProduct,
+        product: newProduct,
       },
     });
   } catch (err) {
