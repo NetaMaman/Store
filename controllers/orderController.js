@@ -1,11 +1,11 @@
-const Order = require("./../models/ordersModel");
+const Order = require('./../models/ordersModel');
 
 //get the collection of all products
 exports.getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find();
     res.status(200).json({
-      status: "sucsses",
+      status: 'sucsses',
       results: orders.length,
       data: {
         orders,
@@ -13,131 +13,77 @@ exports.getAllOrders = async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
-
-//get the collection of all specials
-exports.getAllSpecials = async (req, res) => {
-  try {
-    const specials = await Product.find({ productType: "special" }).exec();
-    res.status(200).json({
-      status: "sucsses",
-      results: specials.length,
-      data: {
-        specials,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
-//get the collection of all fruits
-exports.getAllFruits = async (req, res) => {
-  try {
-    const fruits = await Product.find({ productType: "fruit" }).exec();
-    res.status(200).json({
-      status: "sucsses",
-      results: fruits.length,
-      data: {
-        fruits,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
-      message: err,
-    });
-  }
-};
-
-//get the collection of all veggies
-exports.getAllVeggies = async (req, res) => {
-  try {
-    const veggies = await Product.find({ productType: "vegetable" }).exec();
-    res.status(200).json({
-      status: "sucsses",
-      results: veggies.length,
-      data: {
-        veggies,
-      },
-    });
-  } catch (err) {
-    res.status(404).json({
-      status: "fail",
+      status: 'fail',
       message: err,
     });
   }
 };
 
 //get 1 product from the products collction
-exports.getProduct = async (req, res) => {
+exports.getOrder = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.id);
+    const order = await Order.findById(req.params.id);
     res.status(200).json({
-      status: "success",
+      status: 'success',
       data: {
-        product,
+        order,
       },
     });
   } catch (err) {
     res.status(404).json({
-      status: "error",
+      status: 'error',
       message: err,
     });
   }
 };
 
-exports.createProduct = async (req, res) => {
+exports.createOrder = async (req, res) => {
   try {
-    const newProduct = await Product.create(req.body);
+    const newOrder = await Order.create(req.body);
+    //const quantity = newOrder.products.length;
 
     res.status(201).json({
-      status: "success",
+      status: 'success',
       data: {
-        user: newProduct,
+        order: newOrder,
       },
     });
   } catch (err) {
     res.status(400).json({
-      status: "fail",
+      status: 'fail',
       message: err,
     });
   }
 };
-exports.updateProduct = async (req, res) => {
+exports.updateOrder = async (req, res) => {
   try {
-    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    const order = await Order.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
     res.status(200).json({
-      status: "success",
+      status: 'success',
       data: {
-        product,
+        order,
       },
     });
   } catch (err) {
     res.status(404).json({
-      status: "error",
+      status: 'error',
       message: err,
     });
   }
 };
-exports.deleteProduct = async (req, res) => {
+exports.deleteOrder = async (req, res) => {
   try {
-    const product = await Product.findByIdAndDelete(req.params.id);
+    const order = await Order.findByIdAndDelete(req.params.id);
     res.status(204).json({
-      status: "success",
+      status: 'success',
       data: null,
+      message: 'deleted!',
     });
   } catch (err) {
     res.status(404).json({
-      status: "error",
+      status: 'error',
       message: err,
     });
   }

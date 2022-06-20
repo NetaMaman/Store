@@ -79,6 +79,7 @@ exports.deleteUser = async (req, res) => {
     res.status(204).json({
       status: 'success',
       data: null,
+      message: 'deleted!',
     });
   } catch (err) {
     res.status(404).json({
