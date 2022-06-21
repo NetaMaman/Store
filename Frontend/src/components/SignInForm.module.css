@@ -1,0 +1,22 @@
+.form{
+    color: black;
+}
+
+.popup{
+    background-color: black;
+}
+
+.btn_sign{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.lable{
+    text-align: center;
+    padding: 10px;
+}
+
+.input{
+    border-radius: 3px;
+    padding: 3px;
+}

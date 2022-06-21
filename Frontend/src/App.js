@@ -7,6 +7,7 @@ import FruitsPage from './pages/FruitsPage'
 import VeggiesPage from './pages/VeggiesPage';
 import SpecialPage from './pages/SpecialPage';
 import Layout from './components/layout/Layout'
+import SignInPage from './pages/SignInPage';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
     <Route path='/products/veggies' element={<VeggiesPage />} />
     <Route path='/products/special' element={<SpecialPage />} />
     <Route path='/fruits' element={<FruitsPage />} />
-
+    <Route path='/users/sign-in' element={<SignInPage />} />
     {/* <Route path='/product' exact element= {<Cart />} /> */}
     <Route path='/cart' element= {<Cart />} />
     </Routes>
