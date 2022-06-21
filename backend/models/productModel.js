@@ -15,7 +15,8 @@ const productSchema = new mongoose.Schema({
     required: [true, "A product must get color"],
   },
   image: {
-    type: String,
+    data: Buffer,
+    contentType: String,
   },
   quantity: {
     type: Number,

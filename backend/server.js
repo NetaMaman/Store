@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const application = require('./application');
 
+
 const DB =
   'mongodb+srv://Danielmishan:Danielush7598@cluster0.cwwwndg.mongodb.net/Store?retryWrites=true&w=majority';
 

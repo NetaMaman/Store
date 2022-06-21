@@ -1,6 +1,7 @@
 const multer = require("multer");
 const AppError = require("../utils/appError");
 const Product = require("./../models/productModel");
+
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
@@ -10,6 +11,19 @@ const multerFilter = (req, file, cb) => {
     cd(new AppError("Not an image!", 400), false);
   }
 };
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.uploadProductImages = upload.single("image");
+
+exports.resizeProductImages = (req, res, next) => {
+  console.log(req.file);
+  next();
+};
+
 //get the collection of all products
 exports.getAllProducts = async (req, res) => {
   try {
