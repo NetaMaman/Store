@@ -4,13 +4,21 @@ import {useState} from "react";
 import SignInForm from './SignInForm';
 import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
+import SignInPage from '../pages/SignInPage';
     
     function Appbar(){
-      const [isOpen, setIsOpen]= useState(false);
+      const [signinIsOpen, setSigninIsOpen]= useState(false);
     
-      function togglePopup(){
-        setIsOpen(!isOpen);
+      function togglePopupSignin(){
+        setSigninIsOpen(!signinIsOpen);
       }
+
+      const [signupIsOpen, setSignUpIsOpen]= useState(false);
+    
+      function togglePopupSignup(){
+        setSignUpIsOpen(!signupIsOpen);
+      }
+
       return (
         <header className={classes.header} >
         <div>
@@ -42,12 +50,16 @@ import classes from './Appbar.module.css';
             <Icons.FaSistrix/>
             </div>
         
-        <NavLink to="/users/sign-in">
-        <button className={`${classes.btn}  ${classes.btn_left}`}  onClick={togglePopup}>sign in</button>
-            {isOpen && <SignInForm handleClose={togglePopup}/>}
-            </NavLink>
+        {/* <NavLink to="/users/sign-in"> */}
+        <button className={`${classes.btn}  ${classes.btn_left}`}  onClick={togglePopupSignin}>sign in</button>
+            {signinIsOpen && <SignInForm handleClose={togglePopupSignin}/>}
+            {/* </NavLink> */}
+
+            
         
-        <button className={`${classes.btn}  ${classes.btn_left}`}>Sign up</button>
+        <button className={`${classes.btn}  ${classes.btn_left}`} onClick={togglePopupSignup}>Sign up</button>
+        {signupIsOpen && <SignInForm handleClose={togglePopupSignup}/>}
+
         <NavLink to='cart'>
         <div className={`${classes.btn}  ${classes.btn_left} ${classes.cart}`} ><Icons.FaCartPlus/></div>
         </NavLink>

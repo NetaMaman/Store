@@ -2,7 +2,7 @@ import {Route, Routes} from 'react-router-dom'
 import Appbar from './components/Appbar';
 import './App.css';
 import Homepage from './components/Homepage';
-import Cart from './components/Cart';
+import Cart from './pages/CartPage';
 import FruitsPage from './pages/FruitsPage'
 import VeggiesPage from './pages/VeggiesPage';
 import SpecialPage from './pages/SpecialPage';
@@ -19,7 +19,7 @@ function App() {
     <Route path='/products/veggies' element={<VeggiesPage />} />
     <Route path='/products/special' element={<SpecialPage />} />
     <Route path='/fruits' element={<FruitsPage />} />
-    <Route path='/users/sign-in' element={<SignInPage />} />
+    {/* <Route path='/users/sign-in' element={<SignInPage />} /> */}
     {/* <Route path='/product' exact element= {<Cart />} /> */}
     <Route path='/cart' element= {<Cart />} />
     </Routes>
