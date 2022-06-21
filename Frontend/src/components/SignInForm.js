@@ -2,13 +2,28 @@
 import {useRef} from 'react';
 import Popup from "./ui/Popup";
 import classes from "./SignInForm.module.css"
-import {useState} from "react";
+import {useNavigate} from 'react-router-dom';
 
 
 function SignInForm(props){
-    // const userNameInputRef = useRef();
+    const navigate= useNavigate();
+
+    function signinUserHandler(user){
+        fetch('localhost:3000',
+        {
+            method: 'POST',
+            body:JSON.stringify(user),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        // .then(()=> {navigate(-1, {replace:true});})
+        props.handleClose();
+        // navigate(-1);
+    }
+
+
     const emailInputRef = useRef();
-    // const emailInputRef = useRef();
     const passwordInputRef = useRef();
 
    function submitHandler(event){
@@ -23,29 +38,13 @@ function SignInForm(props){
     };
 
     console.log(user);
-    props.loginUserHandler(user);
+    signinUserHandler(user);
    }
-   
-//    const [isOpen, signInIsOpen]= useState(false);
-
-//    function togglePopupSignIn(){
-//        signInIsOpen(!isOpen);
-//    };
- 
-
 
 return (
 <Popup className={classes.popup} handleClose={props.handleClose}>
     <h1>Sign in</h1>
     <form className= {classes.form} onSubmit={submitHandler}>
-    {/* <div className={classes.control}>
-        <label htmlFor="user-name">User Name</label>
-        <input type='text' required id='user-name'/>
-    </div> */}
-    {/* <div className={`${classes.last_name}  ${classes.text}`}>
-        <label htmlFor="Last-name">Last Name</label>
-        <input type='text' required id='Last-name'/>
-    </div> */}
     <div className={classes.lable}>
         <label htmlFor="email">Email</label>
         <br/>
@@ -57,10 +56,6 @@ return (
         <br/>
         <input className={classes.input} type='password' required id='password' ref={passwordInputRef} />
     </div>
-    {/* <div className={classes.control}>
-        <label htmlFor="password">Confim password</label>
-        <input type='password' required id='password'/>
-    </div> */}
     <div>
         <button className={classes.btn_sign}>sign in</button> </div>
     </form>
