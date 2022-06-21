@@ -13,17 +13,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import { NavLink } from 'react-router-dom';
 import { TbTallymark1 } from "react-icons/tb";
 import logo from './resources/logo.png'
-import Popup from './ui/Popup'
-import {useState} from "react";
-import SignIn from '../pages/SignInPage';
+
 
 
 function Appbar(){
-  const [isOpen, setIsOpen]= useState(false);
-
-  function togglePopupSignIn(){
-    setIsOpen(!isOpen);
-  };
 
 
    return (
@@ -63,9 +56,8 @@ function Appbar(){
           </IconButton>
           <TbTallymark1 className={classes.separator} />
 
-          <div>
           <NavLink to='/users/sign-in'>
-          <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit" onClick={togglePopupSignIn}>sign in</Button>
+          <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit">sign in</Button>
           {/* {isOpen && <Popup
             handleClose={togglePopup}
             content= {
@@ -74,12 +66,8 @@ function Appbar(){
               </div>
             }/>
           } */}
-              {isOpen && <SignIn
-            handleClose={togglePopupSignIn}
-            />
-          }
+       
           </NavLink>
-          </div> 
           <Button className={`${classes.btn}  ${classes.btn_left}`} color="inherit">Sign up</Button>
 
           <IconButton color="inherit" aria-label="add to shopping cart">
