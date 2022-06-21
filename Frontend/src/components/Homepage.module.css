@@ -1,6 +1,13 @@
+.body{
+    /* background-color: rgb(237, 234, 147); */
+	background-color: transparent;	
+
+}
+
 .video{
     display: block;
     position: relative;
-    padding-left: 450px;
-    width: 500px;
+    margin: 50% 50%;
+    padding-left: 350px;
+    width: 1000px;
 }

@@ -12,11 +12,13 @@
 }
 
 .lable{
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+    padding: 15px;
+    margin: 10px;
+    
 }
 
 .input{
     border-radius: 3px;
-    padding: 3px;
+    padding: 3px 30px;
 }

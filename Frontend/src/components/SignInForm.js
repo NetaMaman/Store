@@ -1,8 +1,9 @@
-
 import {useRef} from 'react';
 import Popup from "./ui/Popup";
 import classes from "./SignInForm.module.css"
 import {useNavigate} from 'react-router-dom';
+import logo from './resources/logo.png'
+
 
 
 function SignInForm(props){
@@ -44,15 +45,18 @@ function SignInForm(props){
 return (
 <Popup className={classes.popup} handleClose={props.handleClose}>
     <h1>Sign in</h1>
+
     <form className= {classes.form} onSubmit={submitHandler}>
-    <div className={classes.lable}>
-        <label htmlFor="email">Email</label>
+    <div>
+        <label className={classes.lable} htmlFor="email">Email</label>
         <br/>
 
         <input className={classes.input} type='email' required id='email' ref={emailInputRef}/>
     </div>
-    <div className={classes.lable}>
-        <label htmlFor="password">Password</label>
+    <br/>
+
+    <div>
+        <label  className={classes.lable} htmlFor="password">Password</label>
         <br/>
         <input className={classes.input} type='password' required id='password' ref={passwordInputRef} />
     </div>

@@ -1,5 +1,4 @@
 import {Route, Routes} from 'react-router-dom'
-import Appbar from './components/Appbar';
 import './App.css';
 import Homepage from './components/Homepage';
 import Cart from './pages/CartPage';
@@ -7,9 +6,12 @@ import FruitsPage from './pages/FruitsPage'
 import VeggiesPage from './pages/VeggiesPage';
 import SpecialPage from './pages/SpecialPage';
 import Layout from './components/layout/Layout'
-import SignInPage from './pages/SignInPage';
-
+import {useState} from 'react';
 function App() {
+
+  const [color, changeColor] = useState("#fbff0020");
+
+  document.body.style.backgroundColor = color;
   return (
     <Layout>
     <main>
