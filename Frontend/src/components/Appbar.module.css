@@ -74,7 +74,7 @@
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
   /* background-color: rgba(176, 223, 195, 0.703); */
   background-color: rgba(234, 221, 221, 0.373);
-
+  cursor: pointer;
   font-weight: bold;
 }
 
