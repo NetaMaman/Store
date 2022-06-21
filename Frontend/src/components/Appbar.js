@@ -5,6 +5,7 @@ import SignInForm from './SignInForm';
 import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
 import SignInPage from '../pages/SignInPage';
+import SignUpForm from './SignUpForm';
     
     function Appbar(){
       const [signinIsOpen, setSigninIsOpen]= useState(false);
@@ -50,15 +51,15 @@ import SignInPage from '../pages/SignInPage';
             <Icons.FaSistrix/>
             </div>
         
-        {/* <NavLink to="/users/sign-in"> */}
+     
         <button className={`${classes.btn}  ${classes.btn_left}`}  onClick={togglePopupSignin}>sign in</button>
             {signinIsOpen && <SignInForm handleClose={togglePopupSignin}/>}
-            {/* </NavLink> */}
+         
 
             
         
         <button className={`${classes.btn}  ${classes.btn_left}`} onClick={togglePopupSignup}>Sign up</button>
-        {signupIsOpen && <SignInForm handleClose={togglePopupSignup}/>}
+        {signupIsOpen && <SignUpForm handleClose={togglePopupSignup}/>}
 
         <NavLink to='cart'>
         <div className={`${classes.btn}  ${classes.btn_left} ${classes.cart}`} ><Icons.FaCartPlus/></div>
