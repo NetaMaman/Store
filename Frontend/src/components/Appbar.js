@@ -4,7 +4,6 @@ import {useState} from "react";
 import SignInForm from './SignInForm';
 import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
-import SignInPage from '../pages/SignInPage';
 import SignUpForm from './SignUpForm';
     
     function Appbar(){
@@ -45,27 +44,30 @@ import SignUpForm from './SignUpForm';
                 </li>
       
           </ul>
-          <div>
           <ul>
-            <div className={`${classes.btn}  ${classes.btn_left}  ${classes.search}`}>
-            <Icons.FaSistrix/>
-            </div>
+            <li >
+           
+            <Icons.FaSistrix className={`${classes.btn}  ${classes.btn_left}  ${classes.search}`}/>
+    
+            </li>
         
-     
+        <li>
         <button className={`${classes.btn}  ${classes.btn_left}`}  onClick={togglePopupSignin}>sign in</button>
             {signinIsOpen && <SignInForm handleClose={togglePopupSignin}/>}
-         
+            </li>
 
             
-        
+        <li>
         <button className={`${classes.btn}  ${classes.btn_left}`} onClick={togglePopupSignup}>Sign up</button>
         {signupIsOpen && <SignUpForm handleClose={togglePopupSignup}/>}
+        </li>
 
+        <li>
         <NavLink to='cart'>
         <div className={`${classes.btn}  ${classes.btn_left} ${classes.cart}`} ><Icons.FaCartPlus/></div>
         </NavLink>
+        </li>
         </ul>
-        </div>
         </nav>
     </header>
     );

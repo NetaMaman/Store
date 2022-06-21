@@ -1,46 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .header {
-    width: 100%;
-    height: 7rem;
+    /* width: 100%; */
+    width: 1390px;
+    height: 8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #7ee693;
-    padding: 0 10%;
+    background-color: #7ee693c6;
+    padding: 0 5%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4)
+
   }
-  
+
   .logo {
-    font-size: 2rem;
-    text-decoration: none;
+    /* font-size: 2rem; */
+    /* text-decoration: none; */
     display: flex;
     align-items: center;
-    color: white;
+    margin-top: 50px;
+    /* color: white; */
     justify-content: space-between;
-    font-weight: bold;
+    /* font-weight: bold; */
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+    margin-left: 0;
+
+  }
+
+  .logo:hover{
+    width: 80%;
+    height: 80%;
+    margin-top: 100px;
+    box-shadow: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4)
+    
   }
   
   .header ul {
     list-style: none;
     display:flex;
-    text-align: left;
+    text-align: center;
     width: 70vw;
     justify-content: flex-end;
+    text-decoration: none;
   }
   
   .header li {
-    margin-left: 1rem;
+    margin-left: 2rem;
+    text-decoration: none;
+    color:rgba(93, 177, 114, 0.795);
   }
   
   .header a {
-    text-decoration: none;
     font-size: 1.1rem;
     margin-right: 2rem;
     padding: 6px 16px;
     border-radius: 5px;
     color: white;
+    text-decoration: wavy;
+
   }
   
-  .header a:hover {
-    background: rgb(0,212, 212);
+  /* .header a:hover {
+    background: rgba(0, 212, 53, 0.795);
+  } */
+.btn{
+  border: none ;
+  border-radius: 6px ;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+  /* background-color: rgba(176, 223, 195, 0.703); */
+  background-color: rgba(234, 221, 221, 0.373);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+  .btn:hover {
+    background: rgba(93, 177, 114, 0.795);
+    border-radius: 6px;
   }
   
   .header a:hover,
@@ -49,15 +89,27 @@
     color: white;
   }
   
-  .badge {
+  /* .badge {
     background-color: #cc2062;
     color: white;
     border-radius: 12px;
     padding: 0 1rem;
     margin-left: 0.5rem;
-  }
+  } */
 
   .btn_center{
     display: flex;
-    margin-right: auto;
+    margin-left: auto;
+    margin-top: 70px;
+    justify-content: center;
+    padding: 10px 20px;
+  }
+
+  .btn_left{
+    display: flex;
+    padding: 5px 10px;
+    /* margin-left: auto; */
+    /* padding: 10px 15px; */
+    /* justify-content: space-around; */
+
   }
