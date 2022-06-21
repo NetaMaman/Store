@@ -26,16 +26,16 @@ function SignInForm(props){
     props.loginUserHandler(user);
    }
    
-   const [isOpen, signInIsOpen]= useState(false);
+//    const [isOpen, signInIsOpen]= useState(false);
 
-   function togglePopupSignIn(){
-       signInIsOpen(!isOpen);
-   };
+//    function togglePopupSignIn(){
+//        signInIsOpen(!isOpen);
+//    };
  
 
 
 return (
-<Popup className={classes.popup} hhandleClose={togglePopupSignIn}>
+<Popup className={classes.popup} handleClose={props.handleClose}>
     <h1>Sign in</h1>
     <form className= {classes.form} onSubmit={submitHandler}>
     {/* <div className={classes.control}>

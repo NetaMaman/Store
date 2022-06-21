@@ -4,6 +4,7 @@ import {useState} from "react";
 import SignInForm from './SignInForm';
 import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
+import SignInPage from '../pages/SignInPage';
     
     function Appbar(){
       const [isOpen, setIsOpen]= useState(false);
@@ -42,10 +43,10 @@ import classes from './Appbar.module.css';
             <Icons.FaSistrix/>
             </div>
         
-        <NavLink to="/users/sign-in">
+        {/* <NavLink to="/users/sign-in"> */}
         <button className={`${classes.btn}  ${classes.btn_left}`}  onClick={togglePopup}>sign in</button>
             {isOpen && <SignInForm handleClose={togglePopup}/>}
-            </NavLink>
+            {/* </NavLink> */}
         
         <button className={`${classes.btn}  ${classes.btn_left}`}>Sign up</button>
         <NavLink to='cart'>
