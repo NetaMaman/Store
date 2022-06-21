@@ -1,89 +1,63 @@
-/* 
-.header{
-    margin: 0;
-    padding: 0;
-}
-
-
-
-.appbar{
-    height: 20vh;
-    color: bisque;
-    background-color: rbg(255, 255, 83);
-}
-
-.btn{
+.header {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7ee693;
+    padding: 0 10%;
+  }
+  
+  .logo {
+    font-size: 2rem;
     text-decoration: none;
-    text-align: center;
-    color: rgb(rgb(240, 182, 182), green, blue)
-}
-
-.btn_center{
-padding: 10px;
-}
-
-.separator{
-    size: 10px;
-}
-
-
-/* .btn1 {
-    color: yellow;
-    padding: 10px;
-}
-
-.btn2{
-    font-size: large;
-    padding: 10px;
-} */
-/* .btnSignUp{
-    color: brown;
-}
-
-.btn:hover{
-    background-color: rgb(225, 231, 111);
-} */
-
-/* .btn-center{
-    text-align: center;
-    color: red;
-} */
-
- /* center{
-    color: blue;
-    padding: 10px;
-} */ 
-
-/* 
-.header{
-    margin: 0;
-    padding: 0;
-}
-
-.appbar{
-    background-color: rgb(255, 250, 97);
-}
-
-.logo{
-    margin-top: 10px;
-}
-
-.btn{
-    color: rgb(187, 186, 176);
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .header ul {
+    list-style: none;
+    display:flex;
+    text-align: left;
+    width: 70vw;
+    justify-content: flex-end;
+  }
+  
+  .header li {
+    margin-left: 1rem;
+  }
+  
+  .header a {
     text-decoration: none;
-}
+    font-size: 1.1rem;
+    margin-right: 2rem;
+    padding: 6px 16px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .header a:hover {
+    background: rgb(0,212, 212);
+  }
+  
+  .header a:hover,
+  .header a:active,
+  .header a.active {
+    color: white;
+  }
+  
+  .badge {
+    background-color: #cc2062;
+    color: white;
+    border-radius: 12px;
+    padding: 0 1rem;
+    margin-left: 0.5rem;
+  }
 
-.btn_center{
-    margin-top: 100px;
+  .btn_center{
+    display: flex;
     margin-right: auto;
-    text-align: center;
-}
-
-.btn_left{
-    margin: 1px;
-} */
-/* 
-.appber{
-    background-color: darkkhaki;
-}
- */
+  }
