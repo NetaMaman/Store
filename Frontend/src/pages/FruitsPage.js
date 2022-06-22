@@ -15,10 +15,9 @@ const FRUITS_ARRAY=[
         id:'2',
         name:'Purple Broccoli', 
         image:broccoli,
-        description:'purple broccoli'
+        description:'purple broccoli', 
     }
 ];
-
 
 
 function FruitsPage(){
