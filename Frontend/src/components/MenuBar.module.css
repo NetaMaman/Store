@@ -1,0 +1,44 @@
+.menuClassName{
+    /* display: flex !important; */
+    flex-direction: column;
+    justify-content: center;
+    /* list-style-type: none; */
+    margin: 0 !important;
+    padding: 0 !important;
+    width: max-content !important;
+    background-color: #f1f1f1;
+    overflow: auto !important;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.4);
+
+    /* box-sizing: content-box; */
+    /* float: left !important; */
+  /* overflow: hidden !important; */
+}
+
+.menuButtonClassName{
+    border: none;
+    padding: 7px 7px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+    background-color: rgba(234, 221, 221, 0.373);
+    border-radius: 6px ;
+    text-decoration: none;
+}
+
+.menuButtonClassName:hover{
+    background: rgba(93, 177, 114, 0.795);
+    border-radius: 6px;
+}
+
+.icon{
+    border: none;
+    font-size: large;
+    padding: 0;
+    
+}
+
+.menuItemClassName{
+ 
+    display: block !important;
+}

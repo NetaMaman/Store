@@ -1,3 +1,4 @@
+import MenuBar from "../components/MenuBar";
 import Product from "../components/Product";
 import ProductList from "../components/ProductList";
 import banana from '../components/resources/banana.png'
@@ -25,6 +26,7 @@ function FruitsPage(){
     <section>
     <h1> all fruits</h1>
     <ProductList products={FRUITS_ARRAY} /> 
+  
     </section>);
 }
 
