@@ -14,8 +14,6 @@ router
   .get(productController.getProduct)
   .patch(
     productController.updateProduct,
-    productController.uploadProductImages,
-    productController.resizeProductImages
   )
   .delete(productController.deleteProduct);
 

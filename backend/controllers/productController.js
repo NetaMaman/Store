@@ -1,36 +1,12 @@
-const multer = require("multer");
-const fs = require('fs');
-const AppError = require("../utils/appError");
+const fs = require("fs");
 const Product = require("./../models/productModel");
-
-const multerStorage = multer.memoryStorage();
-
-const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startWith("image")) {
-    cd(null, true);
-  } else {
-    cd(new AppError("Not an image!", 400), false);
-  }
-};
-
-const upload = multer({
-  storage: multerStorage,
-  fileFilter: multerFilter,
-});
-
-exports.uploadProductImages = upload.single("image");
-
-exports.resizeProductImages = (req, res, next) => {
-  console.log(req.file);
-  next();
-};
 
 //get the collection of all products
 exports.getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
     let data = JSON.stringify(products);
-    fs.writeFileSync('products.json', data);
+    fs.writeFileSync("products.json", data);
     res.status(200).json({
       status: "sucsses",
       results: products.length,
@@ -51,7 +27,7 @@ exports.getAllSpecials = async (req, res) => {
   try {
     const specials = await Product.find({ productType: "special" }).exec();
     let data = JSON.stringify(specials);
-    fs.writeFileSync('products-specials.json', data);
+    fs.writeFileSync("products-specials.json", data);
     res.status(200).json({
       status: "sucsses",
       results: specials.length,
@@ -71,7 +47,7 @@ exports.getAllFruits = async (req, res) => {
   try {
     const fruits = await Product.find({ productType: "fruit" }).exec();
     let data = JSON.stringify(fruits);
-    fs.writeFileSync('products-fruits.json', data);
+    fs.writeFileSync("products-fruits.json", data);
 
     res.status(200).json({
       status: "sucsses",
@@ -93,7 +69,7 @@ exports.getAllVeggies = async (req, res) => {
   try {
     const veggies = await Product.find({ productType: "vegetable" }).exec();
     let data = JSON.stringify(veggies);
-    fs.writeFileSync('products-veggies.json', data);
+    fs.writeFileSync("products-veggies.json", data);
     res.status(200).json({
       status: "sucsses",
       results: veggies.length,
