@@ -1,4 +1,5 @@
 const multer = require("multer");
+const fs = require('fs');
 const AppError = require("../utils/appError");
 const Product = require("./../models/productModel");
 
@@ -28,6 +29,8 @@ exports.resizeProductImages = (req, res, next) => {
 exports.getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
+    let data = JSON.stringify(products);
+    fs.writeFileSync('products.json', data);
     res.status(200).json({
       status: "sucsses",
       results: products.length,
@@ -47,6 +50,8 @@ exports.getAllProducts = async (req, res) => {
 exports.getAllSpecials = async (req, res) => {
   try {
     const specials = await Product.find({ productType: "special" }).exec();
+    let data = JSON.stringify(specials);
+    fs.writeFileSync('products-specials.json', data);
     res.status(200).json({
       status: "sucsses",
       results: specials.length,
@@ -65,6 +70,9 @@ exports.getAllSpecials = async (req, res) => {
 exports.getAllFruits = async (req, res) => {
   try {
     const fruits = await Product.find({ productType: "fruit" }).exec();
+    let data = JSON.stringify(fruits);
+    fs.writeFileSync('products-fruits.json', data);
+
     res.status(200).json({
       status: "sucsses",
       results: fruits.length,
@@ -84,6 +92,8 @@ exports.getAllFruits = async (req, res) => {
 exports.getAllVeggies = async (req, res) => {
   try {
     const veggies = await Product.find({ productType: "vegetable" }).exec();
+    let data = JSON.stringify(veggies);
+    fs.writeFileSync('products-veggies.json', data);
     res.status(200).json({
       status: "sucsses",
       results: veggies.length,

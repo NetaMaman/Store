@@ -22,6 +22,16 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, "A product must have a quantity"],
   },
+  quantityType: {
+    type: String,
+    enum: ["kg", "unit", "package"],
+    required: [true, "A product must have quantity type"],
+  },
+  madeIn: {
+    type: String,
+    enum: ["Israel", "abroad"],
+    default: "Israel",
+  },
   price: {
     type: Number,
     required: [true, "A product must have a price"],

@@ -1,11 +1,14 @@
-const Order = require('./../models/ordersModel');
+const fs = require("fs");
+const Order = require("./../models/ordersModel");
 
 //get the collection of all products
 exports.getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find();
+    let data = JSON.stringify(orders);
+    fs.writeFileSync("orders.json", data);
     res.status(200).json({
-      status: 'sucsses',
+      status: "sucsses",
       results: orders.length,
       data: {
         orders,
@@ -13,7 +16,7 @@ exports.getAllOrders = async (req, res) => {
     });
   } catch (err) {
     res.status(404).json({
-      status: 'fail',
+      status: "fail",
       message: err,
     });
   }
@@ -24,14 +27,14 @@ exports.getOrder = async (req, res) => {
   try {
     const order = await Order.findById(req.params.id);
     res.status(200).json({
-      status: 'success',
+      status: "success",
       data: {
         order,
       },
     });
   } catch (err) {
     res.status(404).json({
-      status: 'error',
+      status: "error",
       message: err,
     });
   }
@@ -43,14 +46,14 @@ exports.createOrder = async (req, res) => {
     //const quantity = newOrder.products.length;
 
     res.status(201).json({
-      status: 'success',
+      status: "success",
       data: {
         order: newOrder,
       },
     });
   } catch (err) {
     res.status(400).json({
-      status: 'fail',
+      status: "fail",
       message: err,
     });
   }
@@ -61,14 +64,14 @@ exports.updateOrder = async (req, res) => {
       new: true,
     });
     res.status(200).json({
-      status: 'success',
+      status: "success",
       data: {
         order,
       },
     });
   } catch (err) {
     res.status(404).json({
-      status: 'error',
+      status: "error",
       message: err,
     });
   }
@@ -77,13 +80,13 @@ exports.deleteOrder = async (req, res) => {
   try {
     const order = await Order.findByIdAndDelete(req.params.id);
     res.status(204).json({
-      status: 'success',
+      status: "success",
       data: null,
-      message: 'deleted!',
+      message: "deleted!",
     });
   } catch (err) {
     res.status(404).json({
-      status: 'error',
+      status: "error",
       message: err,
     });
   }
