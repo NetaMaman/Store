@@ -15,7 +15,7 @@ return (
         <h1>Welcome to our site!</h1>
 {/* <ReactPlayer url='https://www.youtube.com/watch?v=9Oy0QJNPT3Y' playing loop/> */}
 
-<video width="800"  muted   preLoad="auto" autoPlay loop>
+<video width="800"  muted   preLoad="auto" autoPlay loop reverse playsInline >
         <source  className={classes.video} src={video} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>

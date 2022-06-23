@@ -5,6 +5,8 @@ import SignInForm from './SignInForm';
 import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
 import SignUpForm from './SignUpForm';
+import MenuBar from './MenuBar';
+
     
     function Appbar(){
       const [signinIsOpen, setSigninIsOpen]= useState(false);
@@ -21,11 +23,18 @@ import SignUpForm from './SignUpForm';
 
       return (
         <header className={classes.header} >
-        <div>
+          
+          <div>
         <NavLink to='/'><img className={classes.logo} src={logo}  height={125}/></NavLink>
          </div>
+         {/* <button onClick={<MenuBar />} className={classes.btn}> <Icons.FaBars/>
+         </button>
+         */}
+       
         <nav>
+     
             <ul>
+             
                 <li>
                     <NavLink to='/products/fruits'>
                     <button className={`${classes.btn}  ${classes.btn_center}`}>Fruits </button>
@@ -42,8 +51,11 @@ import SignUpForm from './SignUpForm';
                   <button className={`${classes.btn}  ${classes.btn_center}`}>Speciales </button>
                   </NavLink>
                 </li>
+
+              
       
           </ul>
+          <MenuBar />
           <ul>
             <li >
            

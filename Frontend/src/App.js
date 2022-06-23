@@ -7,6 +7,9 @@ import VeggiesPage from './pages/VeggiesPage';
 import SpecialPage from './pages/SpecialPage';
 import Layout from './components/layout/Layout'
 import {useState} from 'react';
+import AboutPage from './pages/AboutPage';
+import DeliveriesPage from './pages/DeliveriesPage';
+import ContactUsPage from './pages/ContactUsPage';
 function App() {
 
   const [color, changeColor] = useState("#fbff0020");
@@ -21,6 +24,9 @@ function App() {
     <Route path='/products/veggies' element={<VeggiesPage />} />
     <Route path='/products/special' element={<SpecialPage />} />
     <Route path='/fruits' element={<FruitsPage />} />
+    <Route path='/about' element={<AboutPage />} />
+    <Route path='/deliveries' element={<DeliveriesPage />} />
+    <Route path='/contact-us' element={<ContactUsPage />} />
     {/* <Route path='/users/sign-in' element={<SignInPage />} /> */}
     {/* <Route path='/product' exact element= {<Cart />} /> */}
     <Route path='/cart' element= {<Cart />} />
