@@ -1,11 +1,18 @@
+// import CardPayment from '../components/CardPayment'
+// import {CardElement} from '@stripe/react-stripe-js';
 
+// const Card= ()=> {
+//     return (
+//         <form>
+//                 <div><CardElement /></div>
 
-function Cart(){
+//         </form>
+//     );
+//     }
+
+// function Cart(){
     
-    return (
+//    return(Card);
+// }
 
-    <div>Cart </div>
-    );
-}
-
-export default Cart;
+// export default Cart;
