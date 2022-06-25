@@ -33,7 +33,7 @@ import MenuBar from './MenuBar';
        
         <nav>
      
-            <ul>
+            <ul className={classes.ul_center}>
              
                 <li>
                     <NavLink to='/products/fruits'>
