@@ -1,11 +1,11 @@
 import MenuBar from "../components/MenuBar";
+import PopupCart from "../components/PopupCart";
 
 
 function VeggiesPage(){
     return <div>Veggies
 
-        <MenuBar/>
-    </div>;
+<PopupCart />    </div>;
 }
 
 export default VeggiesPage;

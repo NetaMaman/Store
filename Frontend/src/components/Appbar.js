@@ -6,6 +6,7 @@ import * as Icons from 'react-icons/fa';
 import classes from './Appbar.module.css';
 import SignUpForm from './SignUpForm';
 import MenuBar from './MenuBar';
+import PopupCart from './PopupCart';
 
     
     function Appbar(){
@@ -75,9 +76,10 @@ import MenuBar from './MenuBar';
         </li>
 
         <li>
-        <NavLink to='cart'>
+        {/* <NavLink to='cart'>
         <div className={`${classes.btn}  ${classes.btn_left} ${classes.cart}`} ><Icons.FaCartPlus/></div>
-        </NavLink>
+        </NavLink> */}
+        <PopupCart />
         </li>
         </ul>
         </nav>

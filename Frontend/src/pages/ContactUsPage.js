@@ -1,8 +1,12 @@
+import GoogleMaps from '../components/map/GoogleMaps';
 import classes from './ContactUsPage.module.css'
 
 function ContactUsPage(){
     return(
-        <div>ContactUsPage</div>
+        <div>ContactUsPage
+
+            <GoogleMaps />
+        </div>
     );
 }
 
